@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: NetworkPolicy
+metadata:
+  name: nsx-demo-policy1
+spec:
+  podSelector:
+    matchLabels:
+      app: nsx-demo
+  ingress:
+  - from:
+    - ipBlock:
+       cidr: 100.64.208.71/31
+    ports:
+      - port: 80
+        protocol: TCP
+
