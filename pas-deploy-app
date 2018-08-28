@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+########################
+# include the magic
+########################
+
+. ./demo-magic.sh
+
+clear
+
+DEMO_PROMPT="localadmin@pas:~/demos$ "
+
+pe "cf create-org useraccounts"
+pe "cf target -o useraccounts"
+pe "cf create-space useraccounts"
+pe "cf target -s useraccounts"
+pe "cd /root/cf-networking-release/src/example-apps/cats-and-dogs/frontend"
+pe "cf push useraccounts-fe"
+pe "cd ../backend"
+pe "cf push useraccounts-be"
+
