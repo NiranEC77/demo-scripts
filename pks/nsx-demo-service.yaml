@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nsx-demo
+  labels:
+    app: nsx-demo
+  annotations:
+    ncp/snat_pool: snat-vip-pool-for-pks
+spec:
+  ports:
+    # the port that this service should serve on
+    - port: 80
+  selector:
+    app: nsx-demo
+    
