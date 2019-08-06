@@ -10,10 +10,11 @@ clear
 
 DEMO_PROMPT="ubuntu@opsman-corp-local:~/scripts$ "
 
-pe "kubectl config set-context pks1 --namespace nsx-pks-demo"
+pe "oc config set-context pks1 --namespace nsx-pks-demo"
+pe "oc adm policy add-scc-to-user anyuid -z default"
 pe "cat nsx-demo-replicationctrl.yaml"
-pe "kubectl create -f nsx-demo-replicationctrl.yaml"
-pe "watch kubectl get all -o wide"
+pe "oc create -f nsx-demo-replicationctrl.yaml"
+pe "watch oc get all -o wide"
 
 
 

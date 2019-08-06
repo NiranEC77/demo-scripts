@@ -10,10 +10,10 @@ clear
 
 DEMO_PROMPT="localadmin@k8s-master:~/demos$ "
 
-pe "kubectl delete rc/nsx-demo-rc ingress/nsx-demo-ingress svc/nsx-demo po/mgmtpod"
-pe "watch kubectl get all"
-pe "kubectl config set-context pks1 --namespace default"
-pe "kubectl delete ns nsx-pks-demo"
+pe "oc delete rc/nsx-demo-rc ingress/nsx-demo-ingress svc/nsx-demo po/mgmtpod"
+pe "watch oc get all"
+pe "oc config set-context pks1 --namespace default"
+pe "oc delete ns nsx-pks-demo"
 
 
 
